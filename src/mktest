@@ -1,0 +1,36 @@
+CC = g++
+CFLAGS = -I./Data -I./Services -std=c++17 -Wall
+LDFLAGS =
+OBJDIR = obj
+
+# Define source files
+DATA_SOURCES = $(wildcard Data/*.cpp)
+SERVICE_SOURCES = $(wildcard Services/*.cpp)
+VALIDATION_SOURCES = $(wildcard ValidationTests/*.cpp)
+
+# Define object files
+DATA_OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(DATA_SOURCES))
+SERVICE_OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SERVICE_SOURCES))
+VALIDATION_OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(VALIDATION_SOURCES))
+
+# All object files
+OBJECTS = $(DATA_OBJECTS) $(SERVICE_OBJECTS) $(VALIDATION_OBJECTS)
+
+# Pattern rule for object files
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Main executable for validation
+validation_exec: $(OBJECTS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+# mktest target to build validation executable
+mktest: validation_exec
+	@echo "Validation executable built successfully."
+
+# Clean the build
+clean:
+	rm -rf $(OBJDIR)/* validation_exec
+
+.PHONY: mktest clean
