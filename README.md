@@ -1,7 +1,7 @@
-# airwatcher
-application project to monitor and analyze air quality by ATMO index
+# AirWatcher
 
-This repository contains the source code for the AirWatcher project. AirWatcher is a system designed to [briefly describe the purpose of the project]. For detailed information, refer to the project specification document (provided as `project.pdf`).
+## About
+AirWatcher is an application project designed to monitor and analyze air quality using the ATMO index. The project aims to provide users with real-time data and insights on air quality levels in various regions.
 
 ## Compilation Instructions
 
@@ -11,9 +11,13 @@ To run the main application:
 
 1. Navigate to the root of the `src` folder.
 2. Execute the following command to build the application:
-make
+    ```sh
+    make
+    ```
 3. Run the executable:
-./AirWatcher
+    ```sh
+    ./AirWatcher
+    ```
 4. Follow the on-screen instructions to use the application.
 
 Credentials for initial login:
@@ -21,8 +25,10 @@ Credentials for initial login:
 - **Username:** admin
 - **Password:** admin
 
-To clean the build files after use, run:
-make clean
+5. To clean the build files after use, run:
+    ```sh
+    make clean
+    ```
 
 ### Validation and Unit Tests
 
@@ -30,11 +36,26 @@ To run validation and unit tests:
 
 1. Navigate to the root of the `src` folder.
 2. Execute the following command to build the test executable:
-
-make -f mktest
+    ```sh
+    make -f mktest
+    ```
 3. Run the test executable:
-./validation_exec
+    ```sh
+    ./validation_exec
+    ```
 4. Follow the on-screen instructions to perform validation and unit tests. Note that test scenarios will be displayed in the terminal.
 
-To clean the build files after running tests, execute:
-make -f mktest clean
+5. To clean the build files after running tests, execute:
+    ```sh
+    make -f mktest clean
+    ```
+
+## Project Documentation
+For detailed information, refer to the project specification document provided as `project.pdf`.
+
+## Authors
+- [Melisse Cochet](https://github.com/melissecochet)
+- [Saad ElGhissasi](https://github.com/saadelg12)
+- [Jassir Habba](https://github.com/Jassir69)
+- [Simon Perret](https://github.com/smnpp)
+
