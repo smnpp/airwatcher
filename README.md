@@ -51,7 +51,7 @@ To run validation and unit tests:
     ```
 
 ## Project Documentation
-For detailed information, refer to the project specification document provided as `project.pdf`.
+For detailed information, refer to the project specification document provided as `brief.pdf`.
 
 ## Authors
 - [Melisse Cochet](https://github.com/melissecochet)
